@@ -1,11 +1,11 @@
 {% extends 'layout/layout.twig' %}
 {% block styles %}
 	{{parent()}}
-	<link href="{{basePath()}}/js/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="{{basePath()}}/js/ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block scripts %}
 	{{parent()}}
-	<script src="{{basePath()}}/js/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="{{basePath()}}/js/ui/jquery-ui.min.js" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 	<h1>{{title}}</h1>
