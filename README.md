@@ -1,7 +1,7 @@
 # ZF2-Skeleton
-Zend Framework 2 / Skeleton (Stable)
+Zend Framework 2 / Skeleton
 
-This is a full skeleton of ZF2 for quick-start Projects using ZF2.
+This is a full skeleton of ZF2 for quick-start ZF2 Projects.
 
 PHP, server-side:
 * Zend Framework 2 (latest, stable)
@@ -10,6 +10,8 @@ PHP, server-side:
 Javascript, client-side:
 * jQuery (latest, stable)
 * jQuery-UI (latest, stable)
+* jQuery-UI Bootstrap theme (latest, stable)
 * Bootstrap (latest, stable)
+
 
 ;) Enjoy
