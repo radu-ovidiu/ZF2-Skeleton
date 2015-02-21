@@ -1,7 +1,7 @@
 # ZF2-Skeleton
 Zend Framework 2 / Skeleton
 
-This is a full skeleton of ZF2 for quick-start ZF2 Projects.
+This is a full skeleton of Zend Framework 2 with some components for quick-start ZF2 Projects.
 
 PHP, server-side:
 * Zend Framework 2 (latest, stable)
