@@ -2,6 +2,7 @@
 // Utils Library
 // author: Radu Ilies
 // 2015-02-21
+// License: BSD
 
 namespace UXM;
 
