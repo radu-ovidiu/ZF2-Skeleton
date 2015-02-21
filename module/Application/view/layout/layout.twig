@@ -1,0 +1,52 @@
+{{docType()}}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{app_title}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Styles -->
+		{% block styles %}
+		<link href="{{basePath()}}/css/style.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="{{basePath()}}/js/bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="{{basePath()}}/js/bootstrap/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="{{basePath()}}/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+		{% endblock %}
+		<!-- Scripts -->
+		{% block scripts %}
+		<script type="text/javascript" src="{{basePath()}}/js/jquery.min.js"></script>
+		<script type="text/javascript" src="{{basePath()}}/js/bootstrap/bootstrap.min.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{{basePath()}}/"><img src="{{basePath()}}/img/zf2-logo.png" alt="Zend Framework 2"></a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="{{basePath()}}/sample">{{ translate('Sample Module with Twig Renderer') }}</a></li>
+						<li class="active"><a href="{{basePath()}}/sample/index/bootstrap-samples">{{ translate('Sample Bootstrap Components') }}</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="container">
+			{% block content %}{% endblock %}
+			<hr>
+			<footer>
+				<p>ZF2 Skeleton &copy; 2013 - {{'now'|date('Y')}} unix-world.org</p>
+				<p>Zend Framework &copy; 2005 - {{'now'|date('Y')}} framework.zend.com</p>
+				<p>Twig Templating Engine &copy; 2010 - {{'now'|date('Y')}} twig.sensiolabs.org</p>
+				<p>jQuery &copy; 2009 - {{'now'|date('Y')}} jquery.com</p>
+				<p>jQueryUI &copy; 2009 - {{'now'|date('Y')}} jqueryui.com</p>
+				<p>Bootstrap &copy; 2011 - {{'now'|date('Y')}} twitter.com</p>
+			</footer>
+		</div> <!-- /container -->
+	</body>
+</html>

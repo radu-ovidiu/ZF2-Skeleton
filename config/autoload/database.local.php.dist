@@ -1,0 +1,18 @@
+<?php
+return array(
+	'service_manager' => array(
+		'factories' => array(
+			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+		),
+	),
+	'db' => array(
+		'driver'    => 'Mysqli',
+		'host'      => '127.0.0.1',
+		'port'      => '3306',
+		'database'  => 'zend_db_example',
+		'username'  => 'developer',
+		'password'  => '',
+	),
+);
+
+?>

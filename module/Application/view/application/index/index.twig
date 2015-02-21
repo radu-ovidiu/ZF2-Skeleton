@@ -1,0 +1,59 @@
+{% extends 'layout/layout.twig' %}
+{% block content %}
+<div class="jumbotron">
+	<h1><span class="zf-green">{{ translate('Welcome to ZF2 / Smart Skeleton<br>with Twig Renderer') }}</span></h1>
+	<p>ZF2 version {{ zend_version }} Skeleton Application with Twig Renderer version {{ constant('Twig_Environment::VERSION') }}</a></p>
+</div>
+<h2>Quick CheatSheet</h2>
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Request and Response object</h3>
+			</div>
+			<div class="panel-body">
+<pre>
+$this->getRequest(); //Request object
+$this->getResponse(); //Response object
+$this->getRequest()->getUri(); //URI
+$this->getRequest()->getCookie(); //Cookies
+$this->getRequest()->getServer(); //Server vars
+$this->params()->fromPost('foo'); //POST
+$this->params()->fromQuery('foo'); //GET
+$this->params()->fromRoute('foo'); //RouteMatch
+$this->params()->fromHeader('foo');//Header
+$this->params()->fromFiles('foo'); //Uploaded file
+$this->getRequest()->isXmlHttpRequest();
+$this->getRequest()->isPost();
+</pre>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Redirections and Session</h3>
+			</div>
+			<div class="panel-body">
+<pre>
+//-- Redirecting in a controller
+$this->redirect()->toRoute('route', array('action' => 'name'), array('param => 1'));
+$this->redirect()->toUrl('http://google.com');
+//-- Redirect to 404 (Not Found)
+$this->getResponse()->setStatusCode(404);
+//-- Forwarding
+$this->forward()->dispatch('controllerName', array('action' => 'actionName'));
+//-- Session Howto
+$session = new Zend\Session\Container('user');
+$session->username = 'Foo'; //store username
+$username = $session->username; //retrieve username from session
+</pre>
+			</div>
+		</div>
+	</div>
+</div>
+<h3>Create a New Module</h3>
+<pre>
+vendor/zendframework/zftool/zf.php create module MyModule
+</pre>
+{% endblock %}
