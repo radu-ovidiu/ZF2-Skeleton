@@ -6,6 +6,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED); // error reporti
 ini_set('html_errors', '0');
 ini_set('log_errors', '1');
 ini_set('error_log', 'data/logs/phperrors.log'); // record them to a log
+ini_set('default_charset', 'UTF-8'); // default charset UTF-8
 //--
 
 //-- This makes our life easier when dealing with paths. Everything is relative to the application root now.

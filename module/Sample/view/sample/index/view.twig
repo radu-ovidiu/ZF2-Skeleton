@@ -19,7 +19,8 @@
 	Action: View
 	<br>which can be accessed Simple: <a href="{{basePath()}}/sample">{{basePath()}}/sample</a> or with full address: <a href="{{basePath()}}/sample/index/view">{{basePath()}}/sample/index/view</a><br>
 	This page calls in background another page via Ajax: <a href="{{basePath()}}/sample/index/json">{{basePath()}}/sample/index/json</a><br>
-	JSON Call Result: [ <span id="json-test"></span> ]
+	JSON Call Result: [ <span id="json-test"></span> ]<br>
+	Unicode-Test from JSON: [ <span id="unicode-test-from-json" style="color:#778899;"></span> ]
 	<hr>
 	<script type="text/javascript">
 	$(function(){
@@ -35,9 +36,9 @@
 			//--
 			success: function(msg) {
 				if(msg.status == 'OK') {
-					$('#json-test').css({ 'color':'#66B404', 'font-weight':'bold' }).text(msg.message);
+					$('#json-test').css({ 'color':'#66B404' }).html('<b>' + Uxm_Utils.escape_html(msg.message) + '</b>' + '<' + 'script' +'>' + 'setTimeout(function(){ $("#unicode-test-from-json").text("' + Uxm_Utils.escape_js(msg.unicode_test) + '"); }, 500);' + '<' + '/script' + '>');
 				} else {
-					$('#json-test').css({ 'color':'#FF5500', 'font-weight':'bold' }).text('JSON page Status is NOT OK');
+					$('#json-test').css({ 'color':'#FF5500' }).html('<b><i>JSON page Status is NOT OK</i></b>');
 				} //end if else
 			},
 			error: function(msg) {
@@ -81,7 +82,7 @@
 		<!-- Autocomplete -->
 		<h2 class="demoHeaders">Autocomplete</h2>
 		<div>
-			<input id="autocomplete" title="type &quot;a&quot;">
+			<input type="text" id="autocomplete" title="type &quot;a&quot;">
 		</div>
 		<!-- Button -->
 		<h2 class="demoHeaders">Button</h2>

@@ -62,10 +62,11 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 		//--
 
 		//--
-		$view->json = \UXM\Utils::escape_js(
+		$view->json = \UXM\Utils::json_encode(
 			array(
 				'status' => 'OK',
-				'message' => 'JSON page Status is OK'
+				'message' => 'JSON page Status is OK',
+				'unicode_test' => 'Unicode String: ( áâãäåāăąÁÂÃÄÅĀĂĄ ćĉčçĆĈČÇďĎ èéêëēĕėěęÈÉÊËĒĔĖĚĘ ĝģĜĢĥħĤĦ ìíîïĩīĭȉȋįÌÍÎÏĨĪĬȈȊĮĳĵĲĴķĶĺļľłĹĻĽŁ ñńņňÑŃŅŇóôõöōŏőøœÒÓÔÕÖŌŎŐØŒ ŕŗřŔŖŘșşšśŝßȘŞŠŚŜțţťȚŢŤùúûüũūŭůűųÙÚÛÜŨŪŬŮŰŲ ŵŴẏỳŷÿýẎỲŶŸÝźżžŹŻŽ )'
 			)
 		);
 		//--
