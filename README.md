@@ -1,5 +1,6 @@
 # ZF2-Skeleton
 Zend Framework 2 / (Smart) Skeleton
+with Twig
 
 This is a full skeleton of Zend Framework 2 with some components for quick-start ZF2 Projects.
 
