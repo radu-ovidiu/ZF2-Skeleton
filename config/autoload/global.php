@@ -36,7 +36,16 @@ return array(
 	),
 	/*
 	'db' => array(
-		'driver'    => 'Mysqli',
+		'driver'    => 'Pdo_Mysql', // or Pdo_Pgsql
+		'host'     => '127.0.0.1',
+		'username' => 'root',
+		'password' => '',
+		'dbname'   => 'zf2_test'
+	),
+	*/
+	/*
+	'db' => array(
+		'driver'    => 'Mysqli', // or Pgsql
 		'host'     => '127.0.0.1',
 		'username' => 'root',
 		'password' => '',
@@ -45,12 +54,7 @@ return array(
 			'buffer_results' => true
 		)
 	),
-	'db' => array(
-		'driver'    => 'Pdo_Mysql',
-		'host'     => '127.0.0.1',
-		'username' => 'root',
-		'password' => '',
-		'dbname'   => 'zf2_test'
-	),
 	*/
 );
+
+?>
