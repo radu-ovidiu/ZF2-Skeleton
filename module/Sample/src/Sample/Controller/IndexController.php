@@ -1,7 +1,7 @@
 <?php
-// ZF2 Module / Controller
+// ZF2 Module / Controller :: Sample
 // author: radu-ovidiu
-// 2014-10-10
+// 2015-02-15
 
 namespace Sample\Controller;
 

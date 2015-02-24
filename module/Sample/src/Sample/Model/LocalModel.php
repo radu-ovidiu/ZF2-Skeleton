@@ -1,8 +1,7 @@
 <?php
 // ZF2 Module / Model :: Sample
-// Project: B2BMG/SelfCampaign
 // author: radu-ovidiu
-// 2014-11-02
+// 2015-02-15
 
 namespace Sample\Model;
 
@@ -28,6 +27,7 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 		$this->platform = $this->adapter->getPlatform(); // $this->platform->quoteValue('myvalue');
 
 		if((strtolower($config['db']['database']) == 'pdo_sqlite') AND (!is_file($config['db']['database']))) {
+			//--
 			$this->adapter->query('BEGIN');
 			$this->adapter->query(
 				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL)',
@@ -39,7 +39,9 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 					array(($i+1), 'Name "'.($i+1).'"', "Description '".($i+1)."'")
 				);
 			} //end for
+			//--
 			$this->adapter->query('COMMIT');
+			//--
 		} //end if
 
 	} //END FUNCTION
