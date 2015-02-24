@@ -24,7 +24,7 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 		$this->adapter = new \Zend\Db\Adapter\Adapter($config['db']);
 		$this->platform = $this->adapter->getPlatform(); // $this->platform->quoteValue('myvalue');
 
-		if(!is_file($config['db']['database'])) {
+		if((strtolower($config['db']['database']) == 'pdo_sqlite') AND (!is_file($config['db']['database']))) {
 			$this->adapter->query('BEGIN');
 			$this->adapter->query(
 				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL)',

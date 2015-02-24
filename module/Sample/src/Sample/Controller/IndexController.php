@@ -33,9 +33,9 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 		if((string)$mode == 'sqlite3') {
 			$model = new \Sample\Model\LocalModel($this->getServiceLocator());
 			if((string)$extra == 'list') {
-				$data = $model->readQuery('SELECT * FROM "table_main_sample"');
+				$data = $model->readQuery('SELECT * FROM table_main_sample');
 			} else {
-				$data = $model->readQuery('SELECT COUNT(1) AS total FROM "table_main_sample"');
+				$data = $model->readQuery('SELECT COUNT(1) AS total FROM table_main_sample');
 			} //end if else
 		} //end if
 		//--

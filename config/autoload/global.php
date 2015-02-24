@@ -29,8 +29,28 @@ return array(
 			'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
 		),
 	),
+
 	'db' => array(
 		'driver'    => 'Pdo_Sqlite',
 		'database'  => 'data/cache/test.sqlite3'
 	),
+	/*
+	'db' => array(
+		'driver'    => 'Mysqli',
+		'host'     => '127.0.0.1',
+		'username' => 'root',
+		'password' => '',
+		'dbname'   => 'zf2_test',
+		'options' => array(
+			'buffer_results' => true
+		)
+	),
+	'db' => array(
+		'driver'    => 'Pdo_Mysql',
+		'host'     => '127.0.0.1',
+		'username' => 'root',
+		'password' => '',
+		'dbname'   => 'zf2_test'
+	),
+	*/
 );
