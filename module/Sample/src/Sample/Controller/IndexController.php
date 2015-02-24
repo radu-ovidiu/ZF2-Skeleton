@@ -5,7 +5,9 @@
 
 namespace Sample\Controller;
 
+
 class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
+
 
 	// Default
 	public function ViewAction() {
@@ -54,6 +56,7 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 
 	} //END FUNCTION
 
+
 	// JSON Sample
 	public function JsonAction() {
 
@@ -77,6 +80,7 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 
 	} //END FUNCTION
 
+
 	// Bootstrap Samples
 	public function BootstrapSamplesAction() {
 
@@ -94,7 +98,9 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 
 	} //END FUNCTION
 
+
 } //END CLASS
+
 
 //end of php code
 ?>
