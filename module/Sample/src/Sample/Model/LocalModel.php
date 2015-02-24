@@ -6,6 +6,7 @@
 
 namespace Sample\Model;
 
+
 class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 	protected $serviceLocator;
@@ -13,7 +14,9 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 	protected $adapter;
 	protected $platform;
 
+
 	//=====
+
 
 	public function __construct($serviceLocator) {
 
@@ -41,15 +44,19 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 	} //END FUNCTION
 
+
 	public function getServiceLocator() {
 		return $this->serviceLocator;
 	} //END FUNCTION
+
 
 	public function setServiceLocator(\Zend\ServiceManager\ServiceLocatorInterface $serviceLocator) {
 		$this->serviceLocator = $serviceLocator;
 	} //END FUNCTION
 
+
 	//=====
+
 
 	public function readQuery($query, $values='') {
 		if(!is_array($values)) {
@@ -61,6 +68,7 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 		)->toArray();
 	} //END FUNCTION
 
+
 	public function writeQuery($query, $values='') {
 		if(!is_array($values)) {
 			$values = array();
@@ -71,14 +79,15 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 		);
 	} //END FUNCTION
 
+
 	public function getMicroTime() {
 		list($usec, $sec) = @explode(' ', microtime());
 		return ((float)$usec + (float)$sec);
 	} //END FUNCTION
 
-	//==
 
 } //END CLASS
+
 
 //end of php code
 ?>
