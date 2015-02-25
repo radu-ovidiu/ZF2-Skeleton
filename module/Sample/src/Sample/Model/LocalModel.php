@@ -28,19 +28,22 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 		if((strtolower($config['db']['driver']) == 'pdo_sqlite') AND (!is_file($config['db']['database']))) {
 			//--
-			$this->adapter->query('BEGIN');
-			$this->adapter->query(
+			$this->writeQuery('BEGIN');
+			$this->writeQuery(
 				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL )',
 				array()
 			);
 			for($i=0; $i<9; $i++) {
-				$this->adapter->query(
+				$test = $this->writeQuery(
 					' INSERT INTO "table_main_sample" ("id","name","description") VALUES (?,?,?)',
 					array(($i+1), 'Name "'.($i+1).'"', "Description '".($i+1)."'")
 				);
+				if($test != 1) {
+					break;
+				} //end if
 			} //end for
 			//--
-			$this->adapter->query('COMMIT');
+			$this->writeQuery('COMMIT');
 			//--
 		} //end if
 
