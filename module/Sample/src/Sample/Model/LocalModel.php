@@ -30,7 +30,7 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 			//--
 			$this->adapter->query('BEGIN');
 			$this->adapter->query(
-				file_get_contents('data/sql/database-sqlite3.sql'),
+				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL )',
 				array()
 			);
 			for($i=0; $i<9; $i++) {
