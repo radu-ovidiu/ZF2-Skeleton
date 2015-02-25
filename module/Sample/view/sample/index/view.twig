@@ -50,7 +50,7 @@
 	{% if data|length > 0 %}
 		{% if extra == 'count' %}
 			<a href="{{basePath()}}/sample/index/view/sqlite3/list">View the SQLite3 List Sample</a><br>
-			<h4>There are <b>#[{{data[0].total}}]</b> rows in the SQLite3 Table</h4>
+			<h4>There are <b>#[{{data}}]</b> rows in the SQLite3 Table</h4>
 		{% else %}
 			<a href="{{basePath()}}/sample/index/view/sqlite3/count">View the SQLite3 Count Sample</a><br><br>
 			<link rel="stylesheet" type="text/css" href="{{basePath()}}/js/bootstrap-table/bootstrap-table.min.css">

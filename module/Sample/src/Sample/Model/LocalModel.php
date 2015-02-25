@@ -18,14 +18,14 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 
 	public function __construct($serviceLocator) {
-
+		//--
 		$this->setServiceLocator($serviceLocator);
-
+		//--
 		$config = $this->serviceLocator->get('Config');
 		$config = (array) $config;
 		$this->adapter = new \Zend\Db\Adapter\Adapter($config['db']);
 		$this->platform = $this->adapter->getPlatform(); // $this->platform->quoteValue('myvalue');
-
+		//--
 		if((strtolower($config['db']['driver']) == 'pdo_sqlite') AND (!is_file($config['db']['database']))) {
 			//--
 			$this->writeQuery('BEGIN');
@@ -46,17 +46,21 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 			$this->writeQuery('COMMIT');
 			//--
 		} //end if
-
+		//--
 	} //END FUNCTION
 
 
 	public function getServiceLocator() {
+		//--
 		return $this->serviceLocator;
+		//--
 	} //END FUNCTION
 
 
 	public function setServiceLocator(\Zend\ServiceManager\ServiceLocatorInterface $serviceLocator) {
+		//--
 		$this->serviceLocator = $serviceLocator;
+		//--
 	} //END FUNCTION
 
 
@@ -64,24 +68,55 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 
 	public function readQuery($query, $values='') {
+		//--
 		if(!is_array($values)) {
 			$values = array();
 		} //end if
-		return $this->adapter->query(
+		//--
+		return (array) $this->adapter->query(
 			$query,
 			$values
 		)->toArray();
+		//--
+	} //END FUNCTION
+
+
+	public function countQuery($query, $values='') {
+		//--
+		if(!is_array($values)) {
+			$values = array();
+		} //end if
+		//--
+		$arr = (array) $this->adapter->query(
+			$query,
+			$values
+		)->toArray();
+		//--
+		$count = 0;
+		//--
+		if(is_array($arr[0])) {
+			foreach($arr[0] as $key => $val) {
+				$count = (int) $val; // find first row and first column value
+				break;
+			} //end if
+		} //end if
+		//--
+		return (int) $count;
+		//--
 	} //END FUNCTION
 
 
 	public function writeQuery($query, $values='') {
+		//--
 		if(!is_array($values)) {
 			$values = array();
 		} //end if
-		return $this->adapter->query(
+		//--
+		return (int) $this->adapter->query(
 			$query,
 			$values
 		);
+		//--
 	} //END FUNCTION
 
 
@@ -89,8 +124,11 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 
 
 	public function getMicroTime() {
+		//--
 		list($usec, $sec) = @explode(' ', microtime());
+		//--
 		return ((float)$usec + (float)$sec);
+		//--
 	} //END FUNCTION
 
 
