@@ -32,12 +32,14 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 
 		//--
 		$data = array();
+		$count = 0;
 		if((string)$mode == 'sqlite3') {
 			$model = new \Sample\Model\LocalModel($this->getServiceLocator());
 			if((string)$extra == 'list') {
+				$count = $model->writeQuery('UPDATE table_main_sample SET dtime = ? WHERE id < ?', array(date('Y-m-d H:i:s O'), '9'));
 				$data = $model->readQuery('SELECT * FROM table_main_sample WHERE id < ?', array('9'));
 			} else {
-				$data = $model->countQuery('SELECT COUNT(1) FROM table_main_sample');
+				$count = $model->countQuery('SELECT COUNT(1) FROM table_main_sample');
 			} //end if else
 		} //end if
 		//--
@@ -48,6 +50,7 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 		$view->mode = $mode;
 		$view->extra = $extra;
 		$view->data = $data;
+		$view->count = $count;
 		//--
 
 		//--

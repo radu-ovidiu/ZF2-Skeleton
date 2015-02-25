@@ -30,13 +30,13 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 			//--
 			$this->writeQuery('BEGIN');
 			$this->writeQuery(
-				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL )',
+				'CREATE TABLE "table_main_sample" ("id" character varying(10) NOT NULL, "name" character varying(100) NOT NULL, "description" text NOT NULL, "dtime" text NOT NULL )',
 				array()
 			);
 			for($i=0; $i<9; $i++) {
 				$test = $this->writeQuery(
-					' INSERT INTO "table_main_sample" ("id","name","description") VALUES (?,?,?)',
-					array(($i+1), 'Name "'.($i+1).'"', "Description '".($i+1)."'")
+					' INSERT INTO "table_main_sample" ("id","name","description","dtime") VALUES (?,?,?,?)',
+					array(($i+1), 'Name "'.($i+1).'"', "Description '".($i+1)."'", date('Y-m-d H:i:s O'))
 				);
 				if($test != 1) {
 					break;
@@ -115,7 +115,7 @@ class LocalModel implements \Zend\ServiceManager\ServiceLocatorAwareInterface {
 		return (int) $this->adapter->query(
 			$query,
 			$values
-		);
+		)->count();
 		//--
 	} //END FUNCTION
 
