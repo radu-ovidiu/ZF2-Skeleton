@@ -11,6 +11,9 @@ ini_set('default_charset', 'UTF-8'); // default charset UTF-8
 
 //-- This makes our life easier when dealing with paths. Everything is relative to the application root now.
 chdir(dirname(__DIR__));
+if((php_sapi_name() === 'fpm-fcgi') || (php_sapi_name() === 'cgi-fcgi')) {
+    die('Zend Framework 2 with PHP-FPM or PHP-FCGI requires a Virtual Host to be set !<br>Alternatively, for development as http://127.0.0.1:8888, go to the zf2/public and type in a terminal: php -S 127.0.0.1:8888 -t ./');
+} //end if
 //-- Decline static file requests back to the PHP built-in webserver
 if(php_sapi_name() === 'cli-server' && is_file(__DIR__.parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))) {
 	return false;
