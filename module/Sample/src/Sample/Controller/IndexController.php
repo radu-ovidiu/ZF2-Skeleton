@@ -102,6 +102,20 @@ class IndexController extends \Zend\Mvc\Controller\AbstractActionController {
 	} //END FUNCTION
 
 
+	// Bootstrap Samples
+	public function BenchmarkAction() {
+
+		//--
+		$view = new \Zend\View\Model\ViewModel();
+		//--
+
+		//--
+		return $view;
+		//--
+
+	} //END FUNCTION
+
+
 } //END CLASS
 
 

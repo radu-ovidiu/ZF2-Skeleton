@@ -83,6 +83,20 @@ return array(
 						),
 					),
 					//--
+					'benchmark' => array(
+						'type' => 'Segment',
+						'options' => array(
+							'route' => '/index/benchmark',
+							'constraints' => array(
+							),
+							'defaults' => array(
+								'__NAMESPACE__' => 'Sample\Controller',
+								'controller'    => 'index',
+								'action'        => 'benchmark'
+							),
+						),
+					),
+					//--
 				),
 			),
 		),
