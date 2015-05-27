@@ -9,9 +9,9 @@
     "homepage": "http://framework.zend.com/",
     "require": {
 	"php": ">=5.3.3",
-	"zendframework/zendframework": "2.3.7",
+	"zendframework/zendframework": "2.4.2",
 	"zendframework/zftool": "dev-master",
 	"zf-commons/zfc-twig": "1.2.2",
-	"twig/twig": "1.16.3"
+	"twig/twig": "1.18.1"
     }
 }
