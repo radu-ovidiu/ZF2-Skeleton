@@ -11,6 +11,10 @@ Develop:
 
 ## RELEASE INFORMATION
 
+*Zend Framework 2.4.3*
+
+BugFix Release.
+
 *Zend Framework 2.4.2*
 
 This is the second maintenance release in the version 2.4 series.

@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## 2.4.3 OK
+
 ## 2.4.2 (2015-05-11)
 
 - [7503: Mail header - boundary issue (related to ZF2015-04)](https://github.com/zendframework/zf2/issues/7503)
