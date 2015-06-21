@@ -216,17 +216,17 @@
     },
     {
         "name": "zendframework/zendframework",
-        "version": "2.4.2",
-        "version_normalized": "2.4.2.0",
+        "version": "2.4.3",
+        "version_normalized": "2.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/zendframework/zf2.git",
-            "reference": "6ca85dcf2e9de67beb9bffd4e121e5a3a730b649"
+            "reference": "eb6275e9227e9ed1995d326087488d3ea25811b5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zf2/zipball/6ca85dcf2e9de67beb9bffd4e121e5a3a730b649",
-            "reference": "6ca85dcf2e9de67beb9bffd4e121e5a3a730b649",
+            "url": "https://api.github.com/repos/zendframework/zf2/zipball/eb6275e9227e9ed1995d326087488d3ea25811b5",
+            "reference": "eb6275e9227e9ed1995d326087488d3ea25811b5",
             "shasum": ""
         },
         "require": {
@@ -303,7 +303,7 @@
             "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
             "zendframework/zendservice-recaptcha": "ZendService\\ReCaptcha for rendering ReCaptchas in Zend\\Captcha and/or Zend\\Form"
         },
-        "time": "2015-05-11 16:17:05",
+        "time": "2015-06-17 19:32:51",
         "bin": [
             "bin/classmap_generator.php",
             "bin/pluginmap_generator.php",
@@ -335,23 +335,23 @@
     },
     {
         "name": "twig/twig",
-        "version": "v1.18.1",
-        "version_normalized": "1.18.1.0",
+        "version": "v1.18.2",
+        "version_normalized": "1.18.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f"
+            "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/9f70492f44398e276d1b81c1b43adfe6751c7b7f",
-            "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/e8e6575abf6102af53ec283f7f14b89e304fa602",
+            "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2.7"
         },
-        "time": "2015-04-19 08:30:27",
+        "time": "2015-06-06 23:31:24",
         "type": "library",
         "extra": {
             "branch-alias": {

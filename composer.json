@@ -8,10 +8,10 @@
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
-	"php": ">=5.3.3",
-	"zendframework/zendframework": "2.4.2",
+	"php": ">=5.4.7",
+	"zendframework/zendframework": "2.4.3",
 	"zendframework/zftool": "dev-master",
 	"zf-commons/zfc-twig": "1.2.2",
-	"twig/twig": "1.18.1"
+	"twig/twig": "1.18.2"
     }
 }
