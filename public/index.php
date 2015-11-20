@@ -1,6 +1,7 @@
 <?php
 
 //-- unixman
+date_default_timezone_set('UTC');
 ini_set('display_errors', '1');	// display runtime errors
 error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED); // error reporting
 ini_set('html_errors', '0');
